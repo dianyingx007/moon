@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	background:blue;
+}
+.track{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	animation: circle 10s linear infinite;
+	transform-origin: 50% 400px;
+}
+@keyframes circle{
+	from{transform: rotate(-90deg);}
+	to{transform: rotate(90deg);}
+}
+.moon {
+	width: 100px;
+	height: 100px;
+	background: white;
+	border-radius: 50%;
+	position: relative;
+	animation: inner_circle 10s linear infinite;
+}
+/*为了抵消circle对bef和aft的影响*/
+@keyframes inner_circle{
+	from{transform: rotate(90deg);}
+	to{transform:rotate(-90deg);}
+}
+.moon:before{
+	content: '';
+	display: block;
+	position: absolute;
+	background: black;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	top:0;
+	left: 0;
+	animation: bef 10s linear infinite;
+}
+@keyframes bef{
+	0%{transform: translate(-0%,-0%);}
+	50%{transform: translate(-90%,-50%);}
+	100%{transform: translate(-90%,-50%);}
+}
+.moon:after{
+	content: '';
+	display: block;
+	position: absolute;
+	background: black;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	animation: aft 10s linear infinite;
+}
+@keyframes aft{
+	0%{transform: translate(90%,50%);}
+	50%{transform: translate(90%,50%);}
+	100%{transform: translate(0%,0%);}
+}
