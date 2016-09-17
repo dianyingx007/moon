@@ -3,7 +3,7 @@
 	padding: 0;
 }
 body{
-	background:blue;
+	background:black;
 }
 .track{
 	width: 100px;
@@ -24,7 +24,7 @@ body{
 	position: relative;
 	animation: inner_circle 10s linear infinite;
 }
-/*为了抵消circle对bef和aft的影响*/
+/*为了抵消circle对before和after的影响*/
 @keyframes inner_circle{
 	from{transform: rotate(90deg);}
 	to{transform:rotate(-90deg);}
