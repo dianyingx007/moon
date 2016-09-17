@@ -20,6 +20,9 @@ body{
 	width: 100px;
 	height: 100px;
 	background: white;
+	background: url(../img/moon.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 	border-radius: 50%;
 	position: relative;
 	animation: inner_circle 10s linear infinite;
@@ -63,3 +66,4 @@ body{
 	50%{transform: translate(90%,50%);}
 	100%{transform: translate(0%,0%);}
 }
+
